@@ -1,0 +1,10 @@
+- extendible js interpreter
+- check command for cli to statically check errors like
+  -  wrong type comparison
+  -  service existence
+  -  yml validity
+  -  recursive trig check
+- info like defined service ids should be accessible as vars, like same with 'configs'?
+- support special rules for 'filter:'?
+- add special $services to access service id
+- add support for results

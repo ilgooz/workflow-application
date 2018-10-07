@@ -1,0 +1,22 @@
+name: discord-invites
+description: |
+  send discord invites to your fellows
+
+  curl -XPOST http://localhost:3000/webhook TODO add form
+
+services:
+  webhook: 4f7891f77a6333787075e95b6d3d73ad50b5d1e9
+  discord: 1daf16ca98322024824f307a9e11c88e0aba55e2
+
+configs:
+  sendgridAPIKey: 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
+
+when:
+  webhook:
+    event:
+      request:
+        map:
+          email: $data.data.data.email
+          sendgridAPIKey: $configs.sendgridAPIKey
+        execute:
+          discord: send
